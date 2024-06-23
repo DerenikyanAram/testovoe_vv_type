@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Characters</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+<body>
+<header>
+    <h1>Rick and Morty Characters</h1>
+    <div class="filters">
+        <input type="text" id="searchBox" placeholder="Search by name...">
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter">
+            <option value="">All</option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+            <option value="unknown">Unknown</option>
+        </select>
+        <label for="speciesFilter">Species:</label>
+        <select id="speciesFilter">
+            <option value="">All</option>
+            <option value="Human">Human</option>
+            <option value="Alien">Alien</option>
+        </select>
+        <label for="genderFilter">Gender:</label>
+        <select id="genderFilter">
+            <option value="">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="genderless">Genderless</option>
+            <option value="unknown">Unknown</option>
+        </select>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+</header>
+<div id="characterGrid" class="character-grid"></div>
+
+<div id="pagination" class="pagination"></div>
+<script type="module">
+    import { loadEpisodes, changePage, applyFilters } from './dist/main.js';
+    window.loadEpisodes = loadEpisodes;
+    window.changePage = changePage;
+    window.applyFilters = applyFilters;
+    console.log('Script loaded.');
+</script>
+</body>
+</html>
